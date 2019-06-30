@@ -51,7 +51,6 @@ registerPageButton.click(function () {
 //<editor-fold desc="Login Button">
 loginButton.addEventListener("click", function () {
     let oldwidth = loginButton.style.width;
-    let oldhtml = loginButton.innerHTML;
 
     //<editor-fold desc="Make Loading Spinner">
     loginButton.style.width = "40px";
@@ -66,37 +65,35 @@ loginButton.addEventListener("click", function () {
     mainserver.login(loginEmail.value, loginPassword.value, function (err, body) {
         try {
             if (err) {
-                loginButton.style.width = oldwidth;
-                loginButton.innerHTML = oldhtml;
                 $(loginMessage).html(err.replace("\n", "").substring(0, 64));
                 $(loginMessage).css("visibility", "visible");
                 $(loginMessage).css("color", "red");
                 loginButton.style.width = oldwidth;
-                loginButton.innerHTML = oldhtml;
+                loginButton.innerHTML = "Login";
             }
             if (!body.succeeded) {
                 $(loginMessage).html(body.message.replace("\n", "").substring(0, 64));
                 $(loginMessage).css("visibility", "visible");
                 $(loginMessage).css("color", "red");
                 loginButton.style.width = oldwidth;
-                loginButton.innerHTML = oldhtml;
+                loginButton.innerHTML = "Login";
             } else {
                 mainserver.setSession(body.message.replace("User successfully logged in. ", ""));
-                loginButton.style.width = oldwidth;
-                loginButton.innerHTML = oldhtml;
                 $(registerMessage).css("visiblity", "hidden");
                 $(registerMessage).html();
                 $(loginMessage).css("visiblity", "hidden");
                 $(loginMessage).html();
                 $("#loginSignupPage").fadeOut();
                 $("#accountmanagementname").html(loginEmail.value);
+                loginButton.style.width = oldwidth;
+                loginButton.innerHTML = "Login";
             }
         } catch (e) {
             $(loginMessage).html("Unknown Error Occured");
             $(loginMessage).css("visibility", "visible");
             $(loginMessage).css("color", "red");
             loginButton.style.width = oldwidth;
-            loginButton.innerHTML = oldhtml;
+            loginButton.innerHTML = "Login";
         }
     });
 });
@@ -105,7 +102,6 @@ loginButton.addEventListener("click", function () {
 //<editor-fold desc="Register Button">
 registerButton.addEventListener("click", function () {
     let oldwidth = registerButton.style.width;
-    let oldhtml = registerButton.innerHTML;
     registerButton.style.width = "40px";
     registerButton.innerHTML = "";
     let loadingspinner = document.createElement("IMG");
@@ -120,31 +116,31 @@ registerButton.addEventListener("click", function () {
                 $(registerMessage).css("visibility", "visible");
                 $(registerMessage).css("color", "red");
                 registerButton.style.width = oldwidth;
-                registerButton.innerHTML = oldhtml;
+                registerButton.innerHTML = "Register";
             }
             if (!body.succeeded) {
                 $(registerMessage).html(body.message.replace("\n", "").substring(0, 64));
                 $(registerMessage).css("visibility", "visible");
                 $(registerMessage).css("color", "red");
                 registerButton.style.width = oldwidth;
-                registerButton.innerHTML = oldhtml;
+                registerButton.innerHTML = "Register";
             } else {
                 $(registerMessage).css("visiblity", "hidden");
                 $(registerMessage).html();
                 $(loginMessage).css("visiblity", "hidden");
                 $(loginMessage).html();
-                registerButton.style.width = oldwidth;
-                registerButton.innerHTML = oldhtml;
                 $("#loginSignupPage").fadeOut();
                 $("#accountmanagementname").html(registerEmail.value);
+                registerButton.style.width = oldwidth;
+                registerButton.innerHTML = "Register";
             }
         } catch (e) {
+            console.log(e);
             $(registerMessage).html("Unknown Error Occured");
             $(registerMessage).css("visibility", "visible");
             $(registerMessage).css("color", "red");
             registerButton.style.width = oldwidth;
-            registerButton.innerHTML = oldhtml;
-            console.log(e);
+            registerButton.innerHTML = "Register";
         }
     });
 });
