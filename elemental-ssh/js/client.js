@@ -1,7 +1,8 @@
 let request = require("request");
-let libElementalSSH = require(`./js/libelementalssh`);
 
-window.$ = window.jQuery = require('jquery');
+let libElementalSSH = require("lib-elemental-ssh");
+
+window.$ = window.jQuery = require("jquery");
 
 const loginPageButton = $("#tab1");
 const registerPageButton = $("#tab2");
@@ -23,8 +24,8 @@ const loginEmail = document.getElementById("loginemail"),
 let mainserver = libElementalSSH.createConnection("https://elementalssh.tk");
 
 //<editor-fold desc="When everything is completely loaded">
-$(window).on('DOMContentLoaded', function () {
-    require('electron').remote.getCurrentWindow().show();
+$(window).on("DOMContentLoaded", function () {
+    require("electron").remote.getCurrentWindow().show();
 });
 //</editor-fold>
 
@@ -135,7 +136,6 @@ registerButton.addEventListener("click", function () {
                 registerButton.innerHTML = "Register";
             }
         } catch (e) {
-            console.log(e);
             $(registerMessage).html("Unknown Error Occured");
             $(registerMessage).css("visibility", "visible");
             $(registerMessage).css("color", "red");
@@ -173,7 +173,7 @@ function logout() {
 //</editor-fold>
 
 //<editor-fold desc="Changing Servers">
-pingHostButton.addEventListener('click', function () {
+pingHostButton.addEventListener("click", function () {
     document.getElementById("pingblock").style.visibility = "visible";
     document.getElementById("pingstatus").innerHTML = "Pinging...";
     document.getElementById("pingicon").className = "fas fa-redo";
@@ -182,7 +182,6 @@ pingHostButton.addEventListener('click', function () {
     let host = document.getElementById("switch-auth-server").value.includes("https://") ? document.getElementById("switch-auth-server").value : "https://" + document.getElementById("switch-auth-server").value;
     request(host, {}, (err, res, body) => {
         if (err) {
-            console.log(err);
             document.getElementById("pingstatus").innerHTML = "Ping Failed";
             document.getElementById("pingicon").className = "fas fa-times";
             document.getElementById("pingicon").style.removeProperty("animation");
@@ -196,30 +195,12 @@ pingHostButton.addEventListener('click', function () {
     });
 });
 
-changeServerButton.addEventListener('click', function () {
+changeServerButton.addEventListener("click", function () {
     mainserver = libElementalSSH.createConnection(document.getElementById("switch-auth-server").value.includes("https://") ? document.getElementById("switch-auth-server").value : "https://" + document.getElementById("switch-auth-server").value);
 });
 
-changeServers.addEventListener('click', function () {
+changeServers.addEventListener("click", function () {
     document.getElementById("switch-auth-server").value = mainserver.getIP().replace("http://", "").replace("https://", "");
 });
 
 //</editor-fold>
-
-/**
- * @param {Element} serverbox the element in which to write the server list
- * @param {String} session the session used in Elemental
- */
-function getServers(serverbox, session) {
-    mainserver.getServers(function (err, body) {
-        if (err) {
-            serverbox.innerHTML = "<h1>An unknown error occured while getting the server list.</h1>";
-        } else {
-            if (body === "Invalid session.") {
-                logout();
-            } else {
-
-            }
-        }
-    })
-}

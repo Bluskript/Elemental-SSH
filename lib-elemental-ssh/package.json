@@ -1,14 +1,14 @@
 {
-  "name": "elementalapitest",
+  "name": "lib-elemental-ssh",
   "version": "1.0.0",
-  "description": "",
+  "description": "elemental ssh library, used to simplify everything",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Danil Korennykh",
   "license": "ISC",
   "dependencies": {
-    "libelementalssh": "file:../LibElementalSSH"
+    "request": "^2.88.0"
   }
 }

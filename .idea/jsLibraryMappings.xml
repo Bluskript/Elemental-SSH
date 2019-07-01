@@ -2,9 +2,8 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$/ELEMENTALBACKEND" libraries="{elemental-ssh/ELEMENTALBACKEND/node_modules}" />
-    <file url="file://$PROJECT_DIR$/ElementalApiTest" libraries="{elemental-ssh/ElementalApiTest/node_modules}" />
     <file url="file://$PROJECT_DIR$/elemental-ssh" libraries="{elemental-ssh/elemental-ssh/node_modules}" />
-    <file url="PROJECT" libraries="{@types/express, @types/express-rate-limit, @types/jsonwebtoken, Chart, bootstrap.bundle, elemental-ssh/ELEMENTALBACKEND/node_modules, elemental-ssh/ElementalApiTest/node_modules, elemental-ssh/elemental-ssh/node_modules, jquery, js.cookie, waves}" />
+    <file url="PROJECT" libraries="{@types/express, @types/express-rate-limit, @types/jsonwebtoken, Chart, bootstrap.bundle, elemental-ssh/ELEMENTALBACKEND/node_modules, elemental-ssh/elemental-ssh/node_modules, jquery, js.cookie, waves}" />
     <includedPredefinedLibrary name="HTTP Response Handler" />
     <includedPredefinedLibrary name="Node.js Core" />
   </component>
