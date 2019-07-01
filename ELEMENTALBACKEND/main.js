@@ -10,6 +10,17 @@ const https = require("https");
 const readlineSync = require("readline-sync");
 //</editor-fold>
 
+//<editor-fold desc="Useful Functions">
+/**
+ * @param email the email that's being validated
+ * @returns {boolean} whether it's valid or not
+ */
+function validateEmail(email) {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g.test(email);
+}
+
+//</editor-fold>
+
 //<editor-fold desc="SQL Credentials">
 let sqlhost, sqluser, sqlpass;
 
@@ -53,9 +64,9 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 try {
     https.createServer({
-        key: fs.readFileSync('/etc/letsencrypt/live/elementalssh.tk/privkey.pem', "utf8"),
-        cert: fs.readFileSync('/etc/letsencrypt/live/elementalssh.tk/cert.pem', "utf8"),
-        ca: fs.readFileSync('/etc/letsencrypt/live/elementalssh.tk/chain.pem', "utf8")
+        key: fs.readFileSync("/etc/letsencrypt/live/elementalssh.tk/privkey.pem", "utf8"),
+        cert: fs.readFileSync("/etc/letsencrypt/live/elementalssh.tk/cert.pem", "utf8"),
+        ca: fs.readFileSync("/etc/letsencrypt/live/elementalssh.tk/chain.pem", "utf8")
     }, app).listen(443, function () {
         console.log("Serving on port 443");
     });
@@ -67,7 +78,7 @@ try {
 //<editor-fold desc="Redirect HTTP to HTTPS">
 let httpRedirect = express();
 httpRedirect.get("*", function (req, res) {
-    res.redirect('https://' + req.headers.host + req.url);
+    res.redirect("https://" + req.headers.host + req.url);
 });
 
 httpRedirect.listen(80);
@@ -197,7 +208,7 @@ app.post("/register", function (req, res) {
     } else {
         registerLimit.consume(req.connection.remoteAddress, 1).then(function () {
             conn.query("SELECT * FROM elementalssh.users WHERE email=?", [email], function (err, result) {
-                if (result === undefined || result.length === 0) {
+                if (typeof result === "undefined" || result.length === 0) {
                     bcrypt.hash(password, 10).then(function (hashedpass) {
                         conn.query("INSERT INTO elementalssh.users(email, password, servers) VALUES(?, ?, ?)", [email, hashedpass, ""], function (err) {
                             if (err) {
@@ -248,7 +259,7 @@ app.post("/login", function (req, res) {
     } else {
         loginLimit.consume(req.connection.remoteAddress, 1).then(function () {
             conn.query("SELECT * FROM elementalssh.users WHERE email=?", [email]).then(function (selectusers) {
-                if (selectusers === undefined || selectusers.length === 0) {
+                if (typeof selectusers === "undefined" || selectusers.length === 0) {
                     response.succeeded = false;
                     response.message = "Invalid email or password";
                     res.json(response);
@@ -279,15 +290,4 @@ app.post("/login", function (req, res) {
         });
     }
 });
-//</editor-fold>
-
-//<editor-fold desc="Useful Functions">
-/**
- * @param email the email that's being validated
- * @returns {boolean} whether it's valid or not
- */
-function validateEmail(email) {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g.test(email);
-}
-
 //</editor-fold>

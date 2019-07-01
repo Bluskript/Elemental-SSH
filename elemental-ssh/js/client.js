@@ -23,6 +23,20 @@ const loginEmail = document.getElementById("loginemail"),
 
 let mainserver = libElementalSSH.createConnection("https://elementalssh.tk");
 
+//<editor-fold desc="Logout Function">
+function logout() {
+    mainserver.invalidateSession();
+    $("#loginSignupPage").fadeIn();
+    $("#accountmanagementname").html("Not Logged In");
+    $("#hostslist").html("");
+    $("#loginemail").val("");
+    $("#loginpassword").val("");
+    $("#registeremail").val("");
+    $("#registerpassword").val("");
+}
+
+//</editor-fold>
+
 //<editor-fold desc="When everything is completely loaded">
 $(window).on("DOMContentLoaded", function () {
     require("electron").remote.getCurrentWindow().show();
@@ -156,20 +170,6 @@ $("#skipaccount").click(function () {
 $("#exitbtn, #navlogoutbarbtn").click(function () {
     logout();
 });
-//</editor-fold>
-
-//<editor-fold desc="Logout Function">
-function logout() {
-    mainserver.invalidateSession();
-    $("#loginSignupPage").fadeIn();
-    $("#accountmanagementname").html("Not Logged In");
-    $("#hostslist").html("");
-    $("#loginemail").val("");
-    $("#loginpassword").val("");
-    $("#registeremail").val("");
-    $("#registerpassword").val("");
-}
-
 //</editor-fold>
 
 //<editor-fold desc="Changing Servers">

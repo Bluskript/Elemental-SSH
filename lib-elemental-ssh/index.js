@@ -1,6 +1,6 @@
 const request = require("request");
 
-class serverConnection {
+class ServerConnection {
     /**
      * @param {string} serverip the IP address where the API resides
      */
@@ -80,5 +80,5 @@ class serverConnection {
 }
 
 exports.createConnection = function (serverip) {
-    return new serverConnection(serverip);
+    return new ServerConnection(serverip);
 };
