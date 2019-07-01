@@ -1,5 +1,5 @@
 elemental-ssh/node_modules/
-LibElementalSSH/node_modules/
+lib-elemental-ssh/node_modules/
 ELEMENTALBACKEND/node_modules/
 ELEMENTALBACKEND/credentials.json
 ELEMENTALBACKEND/server.cert

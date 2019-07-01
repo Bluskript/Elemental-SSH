@@ -24,6 +24,7 @@
     "electron-packager": "^13.1.0",
     "electron-splashscreen": "^0.1.7",
     "jquery": "^3.4.1",
+    "lib-elemental-ssh": "file:../lib-elemental-ssh",
     "request": "^2.88.0"
   },
   "devDependencies": {

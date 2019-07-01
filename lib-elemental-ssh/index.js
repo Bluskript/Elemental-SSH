@@ -1,9 +1,5 @@
 const request = require("request");
 
-exports.createConnection = function (serverip) {
-    return new serverConnection(serverip);
-};
-
 class serverConnection {
     /**
      * @param {string} serverip the IP address where the API resides
@@ -24,8 +20,8 @@ class serverConnection {
             url: this.ip + "/login",
             method: "POST",
             json: {
-                "email": email,
-                "password": password
+                email,
+                password
             }
         }, function (error, res, body) {
             if (error || res.statusCode !== 200) {
@@ -40,8 +36,8 @@ class serverConnection {
             url: this.ip + "/register",
             method: "POST",
             json: {
-                "email": email,
-                "password": password
+                email,
+                password
             }
         }, function (error, res, body) {
             if (error) {
@@ -82,3 +78,7 @@ class serverConnection {
         return this.ip;
     }
 }
+
+exports.createConnection = function (serverip) {
+    return new serverConnection(serverip);
+};

@@ -1,20 +1,20 @@
 //<editor-fold desc="Dependencies">
-const express = require('express');
-const mysql = require('promise-mysql');
-const bodyParser = require('body-parser');
-const passwordPolicy = require('password-policy');
-const bcrypt = require('bcrypt');
+const express = require("express");
+const mysql = require("promise-mysql");
+const bodyParser = require("body-parser");
+const passwordPolicy = require("password-policy");
+const bcrypt = require("bcrypt");
 const rateLimit = require("rate-limiter-flexible");
-const fs = require('fs');
-const https = require('https');
-const readlineSync = require('readline-sync');
+const fs = require("fs");
+const https = require("https");
+const readlineSync = require("readline-sync");
 //</editor-fold>
 
 //<editor-fold desc="SQL Credentials">
 let sqlhost, sqluser, sqlpass;
 
 try {
-    let readCredentials = fs.readFileSync("credentials.json", 'utf8');
+    let readCredentials = fs.readFileSync("credentials.json", "utf8");
     ({"sql_host": sqlhost, "sql_username": sqluser, "sql_password": sqlpass} = JSON.parse(readCredentials));
 }
 catch (e) {
@@ -23,7 +23,7 @@ catch (e) {
     configJSON["sql_host"] = readlineSync.question("Please enter the MySQL host\n");
     configJSON["sql_username"] = readlineSync.question("Please enter the MySQL username\n");
     configJSON["sql_password"] = readlineSync.question("Please enter the MySQL password\n", {hideEchoBack: true, mask: "*"});
-    fs.writeFileSync("credentials.json", JSON.stringify(configJSON), 'utf8');
+    fs.writeFileSync("credentials.json", JSON.stringify(configJSON), "utf8");
 }
 //</editor-fold>
 
@@ -53,9 +53,9 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 try {
     https.createServer({
-        key: fs.readFileSync('/etc/letsencrypt/live/elementalssh.tk/privkey.pem', 'utf8'),
-        cert: fs.readFileSync('/etc/letsencrypt/live/elementalssh.tk/cert.pem', 'utf8'),
-        ca: fs.readFileSync('/etc/letsencrypt/live/elementalssh.tk/chain.pem', 'utf8')
+        key: fs.readFileSync('/etc/letsencrypt/live/elementalssh.tk/privkey.pem', "utf8"),
+        cert: fs.readFileSync('/etc/letsencrypt/live/elementalssh.tk/cert.pem', "utf8"),
+        ca: fs.readFileSync('/etc/letsencrypt/live/elementalssh.tk/chain.pem', "utf8")
     }, app).listen(443, function () {
         console.log("Serving on port 443");
     });
@@ -66,7 +66,7 @@ try {
 
 //<editor-fold desc="Redirect HTTP to HTTPS">
 let httpRedirect = express();
-httpRedirect.get('*', function (req, res) {
+httpRedirect.get("*", function (req, res) {
     res.redirect('https://' + req.headers.host + req.url);
 });
 
