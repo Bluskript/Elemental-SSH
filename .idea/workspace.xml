@@ -4,19 +4,9 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86fda985-435d-43d8-a08c-bbaa0c036cd2" name="Default" comment="fix even more codacy issues">
+    <list default="true" id="86fda985-435d-43d8-a08c-bbaa0c036cd2" name="Default" comment="clean up even more">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELEMENTALBACKEND/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ELEMENTALBACKEND/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/css/Sidebar-Menu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/css/bmd.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/css/splash.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/css/waves.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/js/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/js/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/jsconfig.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/elemental-ssh/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/splash.html" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/splash.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib-elemental-ssh/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib-elemental-ssh/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -62,7 +52,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elemental-ssh/js/client.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -75,10 +65,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="104">
+                <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/elemental-ssh/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
+            <state relative-caret-position="260">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -94,7 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>#login</find>
       <find>getServers</find>
       <find>addServerTo</find>
       <find>background:</find>
@@ -124,6 +125,7 @@
       <find>&quot;password&quot;</find>
       <find>return</find>
       <find>logout(</find>
+      <find>'true'</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,10 +148,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/elemental-ssh/splash.html" />
-        <option value="$PROJECT_DIR$/elemental-ssh/main.js" />
         <option value="$PROJECT_DIR$/lib-elemental-ssh/index.js" />
         <option value="$PROJECT_DIR$/ELEMENTALBACKEND/main.js" />
         <option value="$PROJECT_DIR$/elemental-ssh/js/client.js" />
+        <option value="$PROJECT_DIR$/elemental-ssh/main.js" />
       </list>
     </option>
   </component>
@@ -313,7 +315,7 @@
       <workItem from="1561222846285" duration="2869000" />
       <workItem from="1561771509488" duration="9349000" />
       <workItem from="1561837921179" duration="27279000" />
-      <workItem from="1561929424348" duration="9698000" />
+      <workItem from="1561929424348" duration="10487000" />
     </task>
     <task id="LOCAL-00001" summary="daily commits start here">
       <created>1561847151819</created>
@@ -392,11 +394,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561941401739</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="clean up even more">
+      <created>1561942142032</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1561942142032</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99716000" />
+    <option name="totallyTimeSpent" value="100505000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -411,7 +420,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.061315496" visible="true" weight="0.18710022" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.061315496" visible="true" weight="0.18710022" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32998884" />
@@ -421,7 +430,7 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49894625" weight="0.32998884" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32998884" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49736565" visible="true" weight="0.24414715" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49736565" visible="true" weight="0.24414715" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50105375" side_tool="true" weight="0.32998884" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49947312" weight="0.29765886" />
       <window_info active="true" anchor="bottom" id="Inspection Results" order="12" visible="true" weight="0.32998884" />
@@ -454,7 +463,8 @@
     <MESSAGE value="major code cleanup" />
     <MESSAGE value="fix some codacy issues" />
     <MESSAGE value="fix even more codacy issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix even more codacy issues" />
+    <MESSAGE value="clean up even more" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean up even more" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -642,16 +652,6 @@
     <entry file="file://$PROJECT_DIR$/elemental-ssh/css/splash.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="286">
-            <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elemental-ssh/splash.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -666,13 +666,6 @@
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/elemental-ssh/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -697,6 +690,23 @@
           <folding>
             <element signature="e#6425#6462#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="104">
+            <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elemental-ssh/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
         </state>
       </provider>
     </entry>

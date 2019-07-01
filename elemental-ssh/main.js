@@ -2,7 +2,7 @@
 const {app, BrowserWindow} = require("electron");
 const splash = require("@trodi/electron-splashscreen");
 //app.disableHardwareAcceleration();
-process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = 'true';
+process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
