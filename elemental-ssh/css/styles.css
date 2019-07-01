@@ -257,14 +257,14 @@ a {
     background-color: rgb(44, 61, 89) !important;
 }
 
-#loginSignupPage {
+#entryPage {
     z-index: 2;
     height: 100%;
     background: linear-gradient(#000000c7, #000000d1), url(../images/epicmountains.jpg);
     background-size: cover;
 }
 
-#loginSignupForm {
+#entryForm {
     margin-top: 5%;
     width: 40%;
     height: 60%;

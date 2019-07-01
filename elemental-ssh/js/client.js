@@ -23,10 +23,43 @@ const loginEmail = document.getElementById("loginemail"),
 
 let mainserver = libElementalSSH.createConnection("https://elementalssh.tk");
 
+function addLoadingSpinner(element) {
+    element.innerHTML = "";
+    element.style.width = "20%";
+    let loadingSpinner = document.createElement("IMG");
+    loadingSpinner.setAttribute("src", "images/loading.gif");
+    loadingSpinner.style.width = "20px";
+    loadingSpinner.style.height = "20px";
+    element.appendChild(loadingSpinner);
+}
+
+function resetEntryPage() {
+    registerMessage.style.visibility = "hidden";
+    loginMessage.style.visibility = "hidden";
+    loginButton.style.width = "80%";
+    loginButton.innerHTML = "Login";
+}
+
+function displayEntryError(page, message) {
+    if (page === "login") {
+        $(loginMessage).html(message);
+        $(loginMessage).css("visibility", "visible");
+        $(loginMessage).css("color", "red");
+        loginButton.style.width = "80%";
+        loginButton.innerHTML = "Login";
+    } else {
+        $(registerMessage).html(message);
+        $(registerMessage).css("visibility", "visible");
+        $(registerMessage).css("color", "red");
+        registerButton.style.width = "80%";
+        registerButton.innerHTML = "Register";
+    }
+}
+
 //<editor-fold desc="Logout Function">
 function logout() {
     mainserver.invalidateSession();
-    $("#loginSignupPage").fadeIn();
+    $("#entryPage").fadeIn();
     $("#accountmanagementname").html("Not Logged In");
     $("#hostslist").html("");
     $("#loginemail").val("");
@@ -65,50 +98,21 @@ registerPageButton.click(function () {
 
 //<editor-fold desc="Login Button">
 loginButton.addEventListener("click", function () {
-    let oldwidth = loginButton.style.width;
-
-    //<editor-fold desc="Make Loading Spinner">
-    loginButton.style.width = "40px";
-    loginButton.innerHTML = "";
-    let loadingspinner = document.createElement("IMG");
-    loadingspinner.setAttribute("src", "images/loading.gif");
-    loadingspinner.style.width = "20px";
-    loadingspinner.style.height = "20px";
-    loginButton.appendChild(loadingspinner);
-    //</editor-fold>
-
+    addLoadingSpinner(loginButton);
     mainserver.login(loginEmail.value, loginPassword.value, function (err, body) {
         try {
             if (err) {
-                $(loginMessage).html(err.replace("\n", "").substring(0, 64));
-                $(loginMessage).css("visibility", "visible");
-                $(loginMessage).css("color", "red");
-                loginButton.style.width = oldwidth;
-                loginButton.innerHTML = "Login";
+                displayEntryError("login", err.replace("\n", "".substring(0, 64)));
             }
             if (!body.succeeded) {
-                $(loginMessage).html(body.message.replace("\n", "").substring(0, 64));
-                $(loginMessage).css("visibility", "visible");
-                $(loginMessage).css("color", "red");
-                loginButton.style.width = oldwidth;
-                loginButton.innerHTML = "Login";
+                displayEntryError("login", body.message.replace("\n", "").substring(0, 64));
             } else {
-                mainserver.setSession(body.message.replace("User successfully logged in. ", ""));
-                $(registerMessage).css("visiblity", "hidden");
-                $(registerMessage).html();
-                $(loginMessage).css("visiblity", "hidden");
-                $(loginMessage).html();
-                $("#loginSignupPage").fadeOut();
+                $("#entryPage").fadeOut();
                 $("#accountmanagementname").html(loginEmail.value);
-                loginButton.style.width = oldwidth;
-                loginButton.innerHTML = "Login";
+                resetEntryPage();
             }
         } catch (e) {
-            $(loginMessage).html("Unknown Error Occured");
-            $(loginMessage).css("visibility", "visible");
-            $(loginMessage).css("color", "red");
-            loginButton.style.width = oldwidth;
-            loginButton.innerHTML = "Login";
+            displayEntryError("login", "An Unknown Error Occured");
         }
     });
 });
@@ -116,45 +120,21 @@ loginButton.addEventListener("click", function () {
 
 //<editor-fold desc="Register Button">
 registerButton.addEventListener("click", function () {
-    let oldwidth = registerButton.style.width;
-    registerButton.style.width = "40px";
-    registerButton.innerHTML = "";
-    let loadingspinner = document.createElement("IMG");
-    loadingspinner.setAttribute("src", "images/loading.gif");
-    loadingspinner.style.width = "20px";
-    loadingspinner.style.height = "20px";
-    registerButton.appendChild(loadingspinner);
+    addLoadingSpinner(registerButton);
     mainserver.register(registerEmail.value, registerPassword.value, function (err, body) {
         try {
             if (err) {
-                $(registerMessage).html(err.replace("\n", "").substring(0, 64));
-                $(registerMessage).css("visibility", "visible");
-                $(registerMessage).css("color", "red");
-                registerButton.style.width = oldwidth;
-                registerButton.innerHTML = "Register";
+                displayEntryError("register", err.replace("\n", "").substring(0, 64));
             }
             if (!body.succeeded) {
-                $(registerMessage).html(body.message.replace("\n", "").substring(0, 64));
-                $(registerMessage).css("visibility", "visible");
-                $(registerMessage).css("color", "red");
-                registerButton.style.width = oldwidth;
-                registerButton.innerHTML = "Register";
+                displayEntryError("register", body.message.replace("\n", "").substring(0, 64));
             } else {
-                $(registerMessage).css("visiblity", "hidden");
-                $(registerMessage).html();
-                $(loginMessage).css("visiblity", "hidden");
-                $(loginMessage).html();
-                $("#loginSignupPage").fadeOut();
+                resetEntryPage();
+                $("#entryPage").fadeOut();
                 $("#accountmanagementname").html(registerEmail.value);
-                registerButton.style.width = oldwidth;
-                registerButton.innerHTML = "Register";
             }
         } catch (e) {
-            $(registerMessage).html("Unknown Error Occured");
-            $(registerMessage).css("visibility", "visible");
-            $(registerMessage).css("color", "red");
-            registerButton.style.width = oldwidth;
-            registerButton.innerHTML = "Register";
+            displayEntryError("register", "An Unknown Error Occured");
         }
     });
 });
@@ -162,7 +142,7 @@ registerButton.addEventListener("click", function () {
 
 //<editor-fold desc="Skip Login/Register">
 $("#skipaccount").click(function () {
-    $("#loginSignupPage").fadeOut(200);
+    $("#entryPage").fadeOut(200);
 });
 //</editor-fold>
 
