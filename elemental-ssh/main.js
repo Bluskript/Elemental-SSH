@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require("electron");
+const {app} = require("electron");
 const splash = require("@trodi/electron-splashscreen");
 //app.disableHardwareAcceleration();
 process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
@@ -9,47 +9,22 @@ let mainWindow;
 
 function createWindow()
 {
-    // Create the browser window.
     mainWindow = splash.initDynamicSplashScreen(
-    {
-        windowOpts:
         {
-            width: 1408,
-            height: 792,
-            webPreferences:
-            {
-                nodeIntegration: true
-            },
-            icon: "icon.png"
-        },
-        templateUrl: __dirname + "\\splash.html",
-        splashScreenOpts:
-        {
-            width: 300,
-            height: 300,
-            movable: true,
-            webPreferences:
-            {
-                nodeIntegration: true
-            },
-            icon: "icon.png"
-        }
-    });
-    // and load the index.html of the app.
+            windowOpts: {width: 1408, height: 792, webPreferences: {nodeIntegration: true}, icon: "icon.png"},
+            templateUrl: __dirname + "\\splash.html",
+            splashScreenOpts: {
+                width: 300,
+                height: 300,
+                movable: true,
+                webPreferences: {nodeIntegration: true},
+                icon: "icon.png"
+            }
+        });
     mainWindow.main.loadFile("index.html");
-    //mainWindow.main.setMenuBarVisibility(false);
+    mainWindow.main.setMenuBarVisibility(false);
 
-    // Open the DevTools.
-    // mainWindow.webContents.openDevTools()
-
-    // Emitted when the window is closed.
-    mainWindow.main.on("closed", function ()
-    {
-        // Dereference the window object, usually you would store windows
-        // in an array if your app supports multi windows, this is the time
-        // when you should delete the corresponding element.
-        mainWindow = null;
-    });
+    mainWindow.main.on("closed", mainWindow = null);
 }
 
 // This method will be called when Electron has finished

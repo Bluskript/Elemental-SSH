@@ -4,12 +4,9 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86fda985-435d-43d8-a08c-bbaa0c036cd2" name="Default" comment="no double quotes">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+    <list default="true" id="86fda985-435d-43d8-a08c-bbaa0c036cd2" name="Default" comment="remove duplicates, rename a few things">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/js/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/js/client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elemental-ssh/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,17 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ELEMENTALBACKEND/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib-elemental-ssh/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1690">
-              <caret line="77" column="23" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
+            <state relative-caret-position="234">
+              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -155,10 +143,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/elemental-ssh/js/client.js">
+        <entry file="file://$PROJECT_DIR$/elemental-ssh/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+            <state relative-caret-position="260">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -227,9 +215,9 @@
         <option value="$PROJECT_DIR$/elemental-ssh/splash.html" />
         <option value="$PROJECT_DIR$/lib-elemental-ssh/index.js" />
         <option value="$PROJECT_DIR$/ELEMENTALBACKEND/main.js" />
-        <option value="$PROJECT_DIR$/elemental-ssh/main.js" />
         <option value="$PROJECT_DIR$/elemental-ssh/index.html" />
         <option value="$PROJECT_DIR$/elemental-ssh/js/client.js" />
+        <option value="$PROJECT_DIR$/elemental-ssh/main.js" />
       </list>
     </option>
   </component>
@@ -393,7 +381,7 @@
       <workItem from="1561222846285" duration="2869000" />
       <workItem from="1561771509488" duration="9349000" />
       <workItem from="1561837921179" duration="27279000" />
-      <workItem from="1561929424348" duration="13619000" />
+      <workItem from="1561929424348" duration="15595000" />
     </task>
     <task id="LOCAL-00001" summary="daily commits start here">
       <created>1561847151819</created>
@@ -486,11 +474,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561943066246</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="remove duplicates, rename a few things">
+      <created>1561946287156</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1561946287156</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103637000" />
+    <option name="totallyTimeSpent" value="105613000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -550,7 +545,8 @@
     <MESSAGE value="fix even more codacy issues" />
     <MESSAGE value="clean up even more" />
     <MESSAGE value="no double quotes" />
-    <option name="LAST_COMMIT_MESSAGE" value="no double quotes" />
+    <MESSAGE value="remove duplicates, rename a few things" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove duplicates, rename a few things" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -745,13 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elemental-ssh/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -762,17 +751,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ELEMENTALBACKEND/main.js">
+    <entry file="file://$PROJECT_DIR$/lib-elemental-ssh/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="312">
+          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="45" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib-elemental-ssh/index.js">
+    <entry file="file://$PROJECT_DIR$/elemental-ssh/js/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1690">
-          <caret line="77" column="23" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
+        <state relative-caret-position="447">
+          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
         </state>
       </provider>
     </entry>
@@ -885,10 +874,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elemental-ssh/js/client.js">
+    <entry file="file://$PROJECT_DIR$/ELEMENTALBACKEND/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+        <state relative-caret-position="234">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elemental-ssh/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
         </state>
       </provider>
     </entry>
