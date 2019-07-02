@@ -4,22 +4,11 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86fda985-435d-43d8-a08c-bbaa0c036cd2" name="Default" comment="optimize code complexity even more&#10;&#10;code quality A 😎">
-      <change afterPath="$PROJECT_DIR$/elemental-ssh/js/initmaterial.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elemental-ssh/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/elemental-ssh.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/elemental-ssh.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+    <list default="true" id="86fda985-435d-43d8-a08c-bbaa0c036cd2" name="Default" comment="fix the material design&#10;&#10;also remove vulnerable package">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELEMENTALBACKEND/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ELEMENTALBACKEND/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELEMENTALBACKEND/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ELEMENTALBACKEND/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ELEMENTALBACKEND/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ELEMENTALBACKEND/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/css/elemental-styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/js/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/js/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elemental-ssh/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elemental-ssh/css/sass/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/css/sass/materialize.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elemental-ssh/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elemental-ssh/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/elemental-ssh/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib-elemental-ssh/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib-elemental-ssh/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/elemental-ssh/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
-              <caret line="176" column="75" selection-start-line="176" selection-start-column="75" selection-end-line="176" selection-end-column="75" />
+              <caret line="190" column="75" selection-start-line="190" selection-start-column="75" selection-end-line="190" selection-end-column="75" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -54,15 +43,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elemental-ssh/js/client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="27" column="118" selection-start-line="27" selection-start-column="118" selection-end-line="27" selection-end-column="118" />
+            <state relative-caret-position="196">
+              <caret line="193" column="58" selection-start-line="193" selection-start-column="58" selection-end-line="193" selection-end-column="58" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="e#5842#5881#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elemental-ssh/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -87,7 +84,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elemental-ssh/scss/sass/components/_modal.scss">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="95" selection-start-line="95" selection-end-line="95" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -110,13 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>'http</find>
-      <find>return</find>
-      <find>logout(</find>
-      <find>'true'</find>
-      <find>app.qui</find>
-      <find>&quot;password&quot;</find>
-      <find>createWindow</find>
       <find>loginbtn</find>
       <find>display: none</find>
       <find>display</find>
@@ -136,10 +130,17 @@
       <find>loginEmail</find>
       <find>disabled</find>
       <find>.modal-header</find>
-      <find>color</find>
       <find>ping</find>
-      <find>changeServerButton</find>
+      <find>color</find>
+      <find>electron-splash</find>
+      <find>aes256</find>
       <find>login using</find>
+      <find>changeServerButton</find>
+      <find>electron-package</find>
+      <find>bcrypt</find>
+      <find>app-root-path</find>
+      <find>requi</find>
+      <find>electron-splashscreen</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -167,11 +168,12 @@
         <option value="$PROJECT_DIR$/elemental-ssh/scss/sass/components/_color-variables.scss" />
         <option value="$PROJECT_DIR$/elemental-ssh/js/initmaterial.js" />
         <option value="$PROJECT_DIR$/ELEMENTALBACKEND/main.js" />
-        <option value="$PROJECT_DIR$/elemental-ssh/scss/sass/components/_modal.scss" />
         <option value="$PROJECT_DIR$/elemental-ssh/css/elemental-styles.css" />
-        <option value="$PROJECT_DIR$/elemental-ssh/scss/sass/components/_variables.scss" />
         <option value="$PROJECT_DIR$/elemental-ssh/index.html" />
+        <option value="$PROJECT_DIR$/elemental-ssh/scss/sass/components/_variables.scss" />
+        <option value="$PROJECT_DIR$/elemental-ssh/scss/sass/components/_modal.scss" />
         <option value="$PROJECT_DIR$/elemental-ssh/js/client.js" />
+        <option value="$PROJECT_DIR$/elemental-ssh/package.json" />
       </list>
     </option>
   </component>
@@ -227,33 +229,6 @@
               <item name="elemental-ssh" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
               <item name="sass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elemental-ssh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elemental-ssh" type="462c0819:PsiDirectoryNode" />
-              <item name="elemental-ssh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elemental-ssh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elemental-ssh" type="462c0819:PsiDirectoryNode" />
-              <item name="elemental-ssh" type="462c0819:PsiDirectoryNode" />
-              <item name="scss" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elemental-ssh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elemental-ssh" type="462c0819:PsiDirectoryNode" />
-              <item name="elemental-ssh" type="462c0819:PsiDirectoryNode" />
-              <item name="scss" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elemental-ssh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elemental-ssh" type="462c0819:PsiDirectoryNode" />
-              <item name="elemental-ssh" type="462c0819:PsiDirectoryNode" />
-              <item name="scss" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="elemental-ssh" type="b2602c69:ProjectViewProjectNode" />
@@ -362,7 +337,7 @@
       <workItem from="1561771509488" duration="9349000" />
       <workItem from="1561837921179" duration="27279000" />
       <workItem from="1561929424348" duration="25463000" />
-      <workItem from="1562011624191" duration="22461000" />
+      <workItem from="1562011624191" duration="24136000" />
     </task>
     <task id="LOCAL-00001" summary="daily commits start here">
       <created>1561847151819</created>
@@ -469,11 +444,25 @@
       <option name="project" value="LOCAL" />
       <updated>1561948939135</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Major UI Upgrade (material!)&#10;&#10;Redesigned custom auth server screen&#10;&#10;TOASTS!">
+      <created>1562095631954</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1562095631954</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fix the material design&#10;&#10;also remove vulnerable package">
+      <created>1562096195816</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1562096195817</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137942000" />
+    <option name="totallyTimeSpent" value="139617000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -488,7 +477,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.061315496" visible="true" weight="0.19189766" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.061315496" visible="true" weight="0.19189766" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32998884" />
@@ -498,7 +487,7 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49894625" weight="0.32998884" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32998884" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49736565" visible="true" weight="0.24414715" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49736565" visible="true" weight="0.24414715" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50105375" side_tool="true" weight="0.32998884" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49947312" weight="0.29765886" />
       <window_info active="true" anchor="bottom" id="Inspection Results" order="12" visible="true" weight="0.32998884" />
@@ -535,7 +524,9 @@
     <MESSAGE value="no double quotes" />
     <MESSAGE value="remove duplicates, rename a few things" />
     <MESSAGE value="optimize code complexity even more&#10;&#10;code quality A " />
-    <option name="LAST_COMMIT_MESSAGE" value="optimize code complexity even more&#10;&#10;code quality A " />
+    <MESSAGE value="Major UI Upgrade (material!)&#10;&#10;Redesigned custom auth server screen&#10;&#10;TOASTS!" />
+    <MESSAGE value="fix the material design&#10;&#10;also remove vulnerable package" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix the material design&#10;&#10;also remove vulnerable package" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -545,7 +536,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/elemental-ssh/js/client.js</url>
-          <line>36</line>
+          <line>35</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -590,13 +581,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LibElementalSSH/index.js" />
-    <entry file="file://$PROJECT_DIR$/elemental-ssh/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elemental-ssh/js/activateripples.js" />
     <entry file="file://$PROJECT_DIR$/elemental-ssh/js/libelemental.js" />
     <entry file="file://$PROJECT_DIR$/elemental-ssh/js/particles.js" />
@@ -790,9 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elemental-ssh/scss/sass/components/_modal.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/elemental-ssh/css/elemental-styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -800,17 +781,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elemental-ssh/scss/sass/components/_variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="87" column="18" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/elemental-ssh/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="176" column="75" selection-start-line="176" selection-start-column="75" selection-end-line="176" selection-end-column="75" />
+          <caret line="190" column="75" selection-start-line="190" selection-start-column="75" selection-end-line="190" selection-end-column="75" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#form#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -824,14 +798,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/elemental-ssh/scss/sass/components/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="87" column="18" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elemental-ssh/scss/sass/components/_modal.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/elemental-ssh/js/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="27" column="118" selection-start-line="27" selection-start-column="118" selection-end-line="27" selection-end-column="118" />
+        <state relative-caret-position="196">
+          <caret line="193" column="58" selection-start-line="193" selection-start-column="58" selection-end-line="193" selection-end-column="58" />
           <folding>
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="e#5842#5881#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elemental-ssh/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
         </state>
       </provider>
     </entry>
