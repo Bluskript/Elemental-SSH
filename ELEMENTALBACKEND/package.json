@@ -9,7 +9,6 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-rate-limit": "^3.3.2",
-    "jsonwebtoken": "^8.5.1",
     "password-policy": "^0.0.3",
     "password-sheriff": "^1.1.0",
     "promise-mysql": "^3.3.2",

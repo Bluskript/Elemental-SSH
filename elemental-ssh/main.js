@@ -24,7 +24,9 @@ function createWindow()
     mainWindow.main.loadFile("index.html");
     mainWindow.main.setMenuBarVisibility(false);
 
-    mainWindow.main.on("closed", mainWindow = null);
+    mainWindow.main.on("closed", function () {
+        mainWindow = null;
+    });
 }
 
 // This method will be called when Electron has finished

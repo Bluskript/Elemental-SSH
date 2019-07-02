@@ -16,5 +16,7 @@
     <orderEntry type="library" name="@types/express" level="application" />
     <orderEntry type="library" name="@types/jsonwebtoken" level="application" />
     <orderEntry type="library" name="@types/express-rate-limit" level="application" />
+    <orderEntry type="library" name="@types/material-components-web" level="application" />
+    <orderEntry type="library" name="material-components-web" level="application" />
   </component>
 </module>

@@ -2,27 +2,37 @@ let request = require("request");
 
 let libElementalSSH = require("lib-elemental-ssh");
 
-window.$ = window.jQuery = require("jquery");
-
 const loginPageButton = $("#tab1");
 const registerPageButton = $("#tab2");
 const registerPage = $("#registerpage");
 const loginPage = $("#loginpage");
 
-const loginEmail = document.getElementById("loginemail"),
-    loginPassword = document.getElementById("loginpassword"),
-    loginButton = document.getElementById("loginbtn"),
-    loginMessage = document.getElementById("loginmsg"),
-    registerEmail = document.getElementById("registeremail"),
-    registerPassword = document.getElementById("registerpassword"),
-    registerButton = document.getElementById("registerbtn"),
-    registerMessage = document.getElementById("registermsg"),
+const loginEmail = document.getElementById("loginEmail"),
+    loginPassword = document.getElementById("loginPassword"),
+    loginButton = document.getElementById("loginButton"),
+    loginMessage = document.getElementById("loginMessage"),
+    registerEmail = document.getElementById("registerEmail"),
+    registerPassword = document.getElementById("registerPassword"),
+    registerButton = document.getElementById("registerButton"),
+    registerMessage = document.getElementById("registerMessage"),
     changeServers = document.getElementById("changeservers"),
-    pingHostButton = document.getElementById("pingHostButton"),
+    testConnectionButton = document.getElementById("testConnectionButton"),
     changeServerButton = document.getElementById("changeServerButton");
 
 let mainserver = libElementalSSH.createConnection("https://elementalssh.tk");
 
+$("input[name='elemental-auth-server']").change(function () {
+    if ($("input[name='elemental-auth-server']:checked").val() === "custom") {
+        document.getElementById("auth-server-input").disabled = false;
+        M.toast({html: "May cause security issues. (Self-signed certificates not supported yet)"});
+        M.toast({html: `<a onclick="require('electron').shell.openExternal('https://github.com/Bluskript/Elemental-SSH')" style="cursor: pointer">Download Auth Server</a>`})
+    } else {
+        document.getElementById("auth-server-input").disabled = true;
+        mainserver = libElementalSSH.createConnection("https://elementalssh.tk");
+    }
+});
+
+//<editor-fold desc="Entry UI Functions">
 function addLoadingSpinner(element) {
     element.innerHTML = "";
     element.style.width = "20%";
@@ -55,6 +65,8 @@ function displayEntryError(page, message) {
         registerButton.innerHTML = "Register";
     }
 }
+
+//</editor-fold>
 
 //<editor-fold desc="Logout Function">
 function logout() {
@@ -99,7 +111,9 @@ registerPageButton.click(function () {
 //<editor-fold desc="Login Button">
 loginButton.addEventListener("click", function () {
     addLoadingSpinner(loginButton);
+    console.log(loginEmail.value);
     mainserver.login(loginEmail.value, loginPassword.value, function (err, body) {
+        console.log({err, body});
         try {
             if (err) {
                 displayEntryError("login", err.replace("\n", "".substring(0, 64)));
@@ -107,6 +121,7 @@ loginButton.addEventListener("click", function () {
             if (!body.succeeded) {
                 displayEntryError("login", body.message.replace("\n", "").substring(0, 64));
             } else {
+                console.log("login successful");
                 $("#entryPage").fadeOut();
                 $("#accountmanagementname").html(loginEmail.value);
                 resetEntryPage();
@@ -153,34 +168,31 @@ $("#exitbtn, #navlogoutbarbtn").click(function () {
 //</editor-fold>
 
 //<editor-fold desc="Changing Servers">
-pingHostButton.addEventListener("click", function () {
-    document.getElementById("pingblock").style.visibility = "visible";
-    document.getElementById("pingstatus").innerHTML = "Pinging...";
-    document.getElementById("pingicon").className = "fas fa-redo";
-    document.getElementById("pingicon").style.animation = "rotation 2s infinite linear";
-    document.getElementById("pingicon").style.color = "limegreen";
-    let host = document.getElementById("switch-auth-server").value.includes("https://") ? document.getElementById("switch-auth-server").value : "https://" + document.getElementById("switch-auth-server").value;
-    request(host, {}, (err, res, body) => {
+testConnectionButton.addEventListener("click", function () {
+    testConnectionButton.innerHTML = "Pinging...";
+    let host = "";
+    if (document.getElementById("auth-server-input").disabled === true) {
+        host = mainserver.getIP();
+    } else if (document.getElementById("auth-server-input").value.includes("https://")) {
+        host = document.getElementById("auth-server-input").value;
+    } else if (document.getElementById("auth-server-input").value.includes("http://")) {
+        host = document.getElementById("auth-server-input").value.replace("http://", "https://");
+    } else {
+        host = `https://${document.getElementById("auth-server-input").value}`;
+    }
+    request(host, {}, (err) => {
         if (err) {
-            document.getElementById("pingstatus").innerHTML = "Ping Failed";
-            document.getElementById("pingicon").className = "fas fa-times";
-            document.getElementById("pingicon").style.removeProperty("animation");
-            document.getElementById("pingicon").style.color = "red";
+            M.toast({html: "Unable to ping auth server"});
+            testConnectionButton.innerHTML = "Test Connection";
         } else {
-            document.getElementById("pingstatus").innerHTML = "Pinged Successfully";
-            document.getElementById("pingicon").className = "fas fa-check";
-            document.getElementById("pingicon").style.removeProperty("animation");
-            document.getElementById("pingicon").style.color = "limegreen";
+            M.toast({html: "Successfully pinged server"});
+            testConnectionButton.innerHTML = "Test Connection";
         }
     });
 });
 
 changeServerButton.addEventListener("click", function () {
-    mainserver = libElementalSSH.createConnection(document.getElementById("switch-auth-server").value.includes("https://") ? document.getElementById("switch-auth-server").value : "https://" + document.getElementById("switch-auth-server").value);
-});
-
-changeServers.addEventListener("click", function () {
-    document.getElementById("switch-auth-server").value = mainserver.getIP().replace("http://", "").replace("https://", "");
+    mainserver = libElementalSSH.createConnection(document.getElementById("auth-server-input").value.includes("https://") ? document.getElementById("auth-server-input").value : "https://" + document.getElementById("auth-server-input").value);
 });
 
 //</editor-fold>

@@ -6,88 +6,100 @@
         <title>
             Elemental SSH
         </title>
+        <link href="css/sass/materialize.css" rel="stylesheet" media="screen,projection">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link href="fonts/fontawesome-all.min.css" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/elemental-styles.css" rel="stylesheet">
+        <script src="js/jquery.js"></script>
     </head>
     <body style="height: 100%;user-select:none">
-        <nav class="navbar navbar-light navbar-expand-md" style="z-index: 99;">
-            <div class="container-fluid" style="padding-left: 15px;padding-right: 15px;margin-left: auto;margin-right: auto;">
-                <a class="navbar-brand" href="#" style="background-color: transparent;-webkit-app-region: no-drag;">Elemental SSH</a>
-                <button class="navbar-toggler" data-target="#navcol-1" data-toggle="collapse" style="display: none;-webkit-app-region: no-drag;">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navcol-1" style="display: flex;width: auto;flex-basis: 0%;">
-                    <ul class="nav navbar-nav" style="margin-left: auto;margin-right: 5%;">
-                        <li class="nav-item dropdown" style="color: rgb(255,255,255);">
-                            <a aria-expanded="false" class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" id="accountmanagementname" style="background-color: transparent;">Not Logged In</a>
-                            <div class="dropdown-menu" role="menu" style="background-color: #ffffff;">
-                                <a class="dropdown-item" href="#" id="navlogoutbarbtn" role="presentation">Log Out</a>
-                            </div>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <a class="brand-logo">Elemental SSH</a>
+                    <ul class="right">
+                        <a class='dropdown-trigger btn waves-effect waves-light' href='#' data-target='dropdown1'>Not Logged In</a>
+
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li>
+                                <a href="#!" class="waves-effect">
+                                    <i class="material-icons">settings</i>
+                                    Settings
+                                </a>
+                            </li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li>
+                                <a href="#!" class="waves-effect">
+                                    <i class="material-icons">exit_to_app</i>
+                                    Log Out
+                                </a>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <section class="Page" id="entryPage">
+            <div id="entryForm" name="entryForm">
+                <div class="col s12">
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab col s3">
+                            <a href="#loginpage" class="active waves-effect waves-indigo">Login</a>
+                        </li>
+                        <li class="tab col s3">
+                            <a href="#registerpage" class="waves-effect waves-indigo">Sign Up</a>
                         </li>
                     </ul>
                 </div>
-            </div>
-        </nav>
-
-        <section class="Page" id="entryPage">
-            <form id="entryForm" name="entryForm">
                 <div style="box-shadow: 10px 10px 15px rgb(0,0,0);padding-top: 5%;position: relative;text-align: center;height: 100%;z-index: 1;background-color: #1c1c1c;">
                     <div style="width: 100%;margin-bottom: 20px;">
                         <a href="#" style="background-color: rgba(0,0,0,0);text-decoration: none;width: 100%;color: rgb(255,255,255);pointer-events: none;">Login using your Elemental SSH Account.</a>
-                        <a data-target="#switchServers" data-toggle="modal" href="#" id="changeservers" style="background-color: rgba(0,0,0,0);text-decoration: underline;width: 100%;color: #77b3ff;">Change servers</a>
+                        <a href="#changeAuthServers" id="changeservers" class="modal-trigger" style="background-color: rgba(0,0,0,0);text-decoration: underline;width: 100%;color: #77b3ff;">Change servers</a>
                     </div>
-
-                    <div class="flex" style="display: flex;justify-content: center;text-align: center;height: auto;">
-                        <button class="btn btn-primary tab selectedform" id="tab1" style="border-radius: 0px;box-shadow: none;border: none;width: 40%;" type="button">Log In</button>
-                        <button class="btn btn-primary tab" id="tab2" style="background-size: 200% 100%;border-left: 1px solid white;border-radius: 0px;box-shadow: none;border: none;width: 40%;" type="button">Sign Up</button>
-                    </div>
-
                     <div id="loginpage" style="width: 100%;">
-                        <div class="input-name" style="margin-top: 20px;width: 80%;height: 30px;">
-                            <input autocomplete="off" class="form-control" id="loginemail" name="email" onkeydown="if (event.keyCode === 13)document.getElementById('loginbtn').click()" placeholder="Email" style="border-radius: 0;border: none;padding-left: 2%;width:100%;height:100%;background-color: rgb(38,38,38);color: rgb(255,255,255);box-shadow: none;outline: none;" type="text">
-                            <span class="underline-animation"></span>
+                        <div class="input-field col s12" style="width: 80%;display: inline-block; position: relative;margin-top: 15px">
+                            <input id="loginEmail" type="email" class="validate" style="color: white">
+                            <label for="loginEmail">Email</label>
                         </div>
 
-                        <div class="input-name" style="margin-top: 20px;height: 30px;width:80%">
-                            <input autocomplete="off" class="form-control" id="loginpassword" name="password" onkeydown="if (event.keyCode === 13)document.getElementById('loginbtn').click()" placeholder="Password" style="padding-left: 2%;border-radius: 0;border: none;width:100%;height:100%;background-color: rgb(38,38,38);color: rgb(255,255,255);box-shadow: none;outline: none;" type="password">
-                            <span class="underline-animation"></span>
+                        <div class="input-field col s12" style="width: 80%;display: inline-block; position: relative;">
+                            <input id="loginPassword" type="password" class="validate" style="color: white">
+                            <label for="loginPassword">Password</label>
                         </div>
 
-                        <h1 id="loginmsg" style="color: rgb(255, 65, 65);font-size: 15px;display: block;visibility: hidden;">
+                        <h1 id="loginMessage" style="color: rgb(255, 65, 65);font-size: 15px;display: block;visibility: hidden;">
                             Missing email.
                         </h1>
 
                         <div style="width: 100%">
-                            <button class="btn btn-primary submitbtn" id="loginbtn" style="transition: all 0.2s linear; border-radius: 0px; box-shadow: none; border: none; width: 80%;" type="button">Log In</button>
+                            <a class="waves-effect waves-light btn entrybutton" id="loginButton">Login</a>
                         </div>
                     </div>
 
-                    <div id="registerpage" style="width: 100%;display: none;">
-                        <div class="input-name" style="margin-top: 20px;width: 80%;height: 30px;">
-                            <input autocomplete="off" class="form-control" id="registeremail" name="email" onkeydown="if (event.keyCode === 13)document.getElementById('registerbtn').click()" placeholder="Email" style="border-radius: 0;border: none;padding-left: 2%;width:100%;height:100%;background-color: rgb(38,38,38);color: rgb(255,255,255);box-shadow: none;outline: none;" type="text">
-                            <span class="underline-animation"></span>
+                    <div id="registerpage" style="width: 100%;">
+                        <div class="input-field col s12" style="width: 80%;display: inline-block; position: relative;margin-top: 15px">
+                            <input id="registerEmail" type="email" class="validate" style="color: white">
+                            <label for="registerEmail">Email</label>
                         </div>
 
-                        <div class="input-name" style="margin-top: 20px;height: 30px;width:80%">
-                            <input autocomplete="off" class="form-control" id="registerpassword" name="password" onkeydown="if (event.keyCode === 13)document.getElementById('registerbtn').click()" placeholder="Password" style="padding-left: 2%;border-radius: 0;border: none;width:100%;height:100%;background-color: rgb(38,38,38);color: rgb(255,255,255);box-shadow: none;outline: none;" type="password">
-                            <span class="underline-animation"></span>
+                        <div class="input-field col s12" style="width: 80%;display: inline-block; position: relative;">
+                            <input id="registerPassword" type="password" class="validate" style="color: white">
+                            <label for="registerPassword">Password</label>
                         </div>
 
-                        <h1 id="registermsg" style="color:rgb(255, 65, 65);font-size: 15px;display:block;visibility: hidden">
+                        <h1 id="registerMessage" style="color:rgb(255, 65, 65);font-size: 15px;display:block;visibility: hidden">
                             Invalid Username Or Password
                         </h1>
 
                         <div style="width:100%">
-                            <button class="btn btn-primary btn-raised submitbtn" id="registerbtn" style="transition: all 0.2s linear;border-right: 1px solid white;border-radius: 0px;box-shadow: none;border: none;width: 80%;" type="button">Register</button>
+                            <a class="waves-effect waves-light btn entrybutton" id="registerButton">Sign Up</a>
                         </div>
                     </div>
                     <a href="#" id="skipaccount" style="background-color: rgba(0,0,0,0);text-decoration: underline;padding-bottom: 5px;width: 100%;bottom: 0;left: 0;position: absolute;color: rgb(255,255,255);">Continue Without Account</a>
                 </div>
-            </form>
+            </div>
         </section>
-
         <section class="Page" id="mainPage" style="z-index: 1;background-color: black;height: 100%;">
             <div class="d-flex" style="position: absolute;left: 0;top: 0;flex-flow: column;padding-top: 56px;float: left;z-index: 2;width: 20%;height: 100%;background-color: #212121b3;box-shadow: 1px 1px 10px rgb(35,35,35);">
                 <div class="sidebaritem" href="#" style="text-decoration: none;padding-top: 8px;display: block;padding-left: 2rem;height: 40px;width: 100%;color: rgb(255,255,255);">
@@ -164,94 +176,36 @@
             </div>
         </section>
 
-        <div aria-labelledby="addHostLabel" aria-modal="true" class="modal fade" id="addHost" role="dialog" style="display: none;" tabindex="-1">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content" style="background-color: rgb(48, 47, 53);">
-                    <div class="modal-header">
-                        <h5 class="modal-title" style="color:white">
-                            Add Host
-                        </h5>
-                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body" style="color:white">
-                        <div class="input-name" style="width:80%;margin-left: 10%;">
-                            <label for="add-server-label" style="margin:0;">Label</label>
-                            <input id="add-server-label" name="add-server-label" style="width:100%;border: none;background-color: rgb(42, 41, 45);color: white;" type="text">
-                            <span class="underline-animation"></span>
+        <div id="changeAuthServers" class="modal">
+            <div class="modal-content">
+                <h4 class="modal-header">Change Auth Servers</h4>
+                <p class="modal-header">Select an Authentication Server</p>
+                <p>
+                    <label>
+                        <input name="elemental-auth-server" class="with-gap" type="radio" value="default" checked/>
+                        <span>Default Elemental SSH Auth Server</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="elemental-auth-server" class="with-gap" type="radio" value="custom"/>
+                        <span>Custom Auth Server</span>
+                        <div class="input-field">
+                            <input id="auth-server-input" type="url" class="validate" pattern="https://.*" style="color: white" disabled>
+                            <label for="auth-server-input">Auth Server IP / Domain</label>
                         </div>
-
-                        <div class="input-name" style="width:80%;margin-left: 10%;">
-                            <label for="add-server-host" style="margin:0;">IP/Hostname</label>
-                            <input id="add-server-host" name="add-server-host" style="border: none;width:100%;background-color: rgb(42, 41, 45);color:white;" type="text">
-                            <span class="underline-animation"></span>
-                        </div>
-
-                        <div class="input-name" style="width:80%;margin-left: 10%;">
-                            <label for="add-server-port" style="margin:0;">Port</label>
-                            <input id="add-server-port" name="add-server-port" placeholder="22" style="border: none;width:100%;background-color: rgb(42, 41, 45);color:white;" type="text">
-                            <span class="underline-animation"></span>
-                        </div>
-
-                        <div class="input-name" style="width:80%;margin-left: 10%;">
-                            <label for="add-server-username" style="margin:0;">Username</label>
-                            <input id="add-server-username" name="add-server-username" style="border: none;width:100%;background-color: rgb(42, 41, 45);color:white;" type="text">
-                            <span class="underline-animation"></span>
-                        </div>
-
-                        <div class="input-name" style="width:80%;margin-left: 10%;">
-                            <label for="add-server-password" style="margin:0;">Password</label>
-                            <input id="add-server-password" name="add-server-password" style="border: none;width:100%;background-color: rgb(42, 41, 45);color:white;" type="password">
-                            <span class="underline-animation"></span>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" data-dismiss="modal" style="border-style: none;border-radius: 0px;background-color: rgb(41, 41, 45);" type="button">Close</button>
-                        <button class="btn btn-primary" data-dismiss="modal" onclick="addServerRequest()" style="border-style: none;border-radius: 0px;background-color: rgb(41, 41, 45);" type="button">Add Host</button>
-                    </div>
-                </div>
+                    </label>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect waves-indigo btn-flat">Close</a>
+                <a class="waves-effect waves-indigo btn-flat" id="testConnectionButton">Test Connection</a>
+                <a class="modal-close waves-effect waves-indigo btn-flat" id="changeServerButton">Change Auth Servers</a>
             </div>
         </div>
-
-        <div aria-labelledby="switchServerLabel" aria-modal="true" class="modal fade" id="switchServers" role="dialog" style="display: hidden;" tabindex="-1">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content" style="background-color: rgb(48, 47, 53);">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel" style="color:white">
-                            Switch Authentication Servers
-                        </h5>
-                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body" style="color:white">
-                        <div class="input-name" style="width:80%;margin-left: 10%;">
-                            <div style="width:100%;">
-                                <label>IP/Hostname</label>
-                                <div id="pingblock" style="float: right;visibility: hidden">
-                                    <i class="fas fa-redo" id="pingicon" style="margin-left: auto; animation: rotation 2s infinite linear;color:limegreen;font-size:12px;"></i>
-                                    <label id="pingstatus" style="margin-left: 5px;">Pinging...</label>
-                                </div>
-                            </div>
-                            <input id="switch-auth-server" name="switch-auth-server" style="border: none;width:100%;background-color: rgb(42, 41, 45);color:white;" type="text">
-                            <span class="underline-animation"></span>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" data-dismiss="modal" style="border-style: none;border-radius: 0px;background-color: rgb(41, 41, 45);" type="button">Close</button>
-                        <button class="btn btn-secondary" id="pingHostButton" style="border-style: none;border-radius: 0px;background-color: rgb(41, 41, 45);" type="button">Ping Host</button>
-                        <button class="btn btn-primary" data-dismiss="modal" id="changeServerButton" onclick="changeServers()" style="border-style: none;border-radius: 0px;background-color: rgb(41, 41, 45);" type="button">Change Servers</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="js/client.js"></script>
+        <script src="js/materialize.min.js"></script>
+        <script src="js/initmaterial.js"></script>
         <script src="js/popper.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/client.js"></script>
     </body>
 </html>

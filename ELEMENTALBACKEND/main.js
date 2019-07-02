@@ -71,6 +71,7 @@ try {
         console.log("Serving on port 443");
     });
 } catch (e) {
+    console.log(e);
     throw new Error("Unfortunately, you do not appear to support HTTPS! Please register using LetsEncrypt or wait until this is fixed.");
 }
 //</editor-fold>

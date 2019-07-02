@@ -2,18 +2,17 @@ const request = require("request");
 
 class ServerConnection {
     /**
-     * @param {string} serverip the IP address where the API resides
+     * @param {string} serverip - where the auth server is
      */
     constructor(serverip) {
         this.ip = serverip;
-        this.session = "null";
     }
 
     /**
      * @description sends a request to the server with the given credentials
-     * @param {string} email the email
-     * @param {string} password the password
-     * @param {function} callback the function to return results to
+     * @param {string} email - the email
+     * @param {string} password - the password
+     * @param {function} callback - response function
      */
     login(email, password, callback) {
         request.post({
@@ -45,33 +44,6 @@ class ServerConnection {
             }
             return callback(null, body);
         });
-    }
-
-    getServers(callback) {
-        request.post({
-            url: this.ip + "/getservers",
-            method: "POST",
-            json: {
-                "session": this.getSession()
-            }
-        }, function (error, res, body) {
-            if (error || res.statusCode !== 200) {
-                callback(error);
-            }
-            callback(null, body);
-        });
-    }
-
-    setSession(insession) {
-        this.session = insession;
-    }
-
-    getSession() {
-        return this.session;
-    }
-
-    invalidateSession() {
-        this.session = "null";
     }
 
     getIP() {
