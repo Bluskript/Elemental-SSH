@@ -192,7 +192,18 @@ testConnectionButton.addEventListener("click", function () {
 });
 
 changeServerButton.addEventListener("click", function () {
-    mainserver = libElementalSSH.createConnection(document.getElementById("auth-server-input").value.includes("https://") ? document.getElementById("auth-server-input").value : "https://" + document.getElementById("auth-server-input").value);
+    let host = "";
+    if (document.getElementById("auth-server-input").disabled === true) {
+        host = mainserver.getIP();
+    } else if (document.getElementById("auth-server-input").value.includes("https://")) {
+        host = document.getElementById("auth-server-input").value;
+    } else if (document.getElementById("auth-server-input").value.includes("http://")) {
+        host = document.getElementById("auth-server-input").value.replace("http://", "https://");
+    } else {
+        host = `https://${document.getElementById("auth-server-input").value}`;
+    }
+
+    mainserver = libElementalSSH.createConnection(host);
 });
 
 //</editor-fold>
