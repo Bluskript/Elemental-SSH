@@ -18,7 +18,7 @@
   "homepage": "https://gitlab.com/EvilSourcerer/elemental-ssh#README",
   "dependencies": {
     "@trodi/electron-splashscreen": "^0.3.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lib-elemental-ssh": "file:../lib-elemental-ssh",
     "request": "^2.88.0"
   },
